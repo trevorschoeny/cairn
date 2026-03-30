@@ -1,0 +1,106 @@
+# ============================================================================
+# Cairn Configuration
+# Architectural Knowledge Management for AI-Assisted Development
+# ============================================================================
+#
+# This file is read by Cairn skills at runtime. Edit it directly —
+# there is no interactive setup. All fields have sensible defaults.
+#
+
+# ----------------------------------------------------------------------------
+# Project Identity
+# ----------------------------------------------------------------------------
+
+project:
+  name: ""                  # Your project name. Used in generated CAIRN.md and
+                            # decision record headers. If blank, agents will
+                            # infer from the repo/directory name.
+
+# ----------------------------------------------------------------------------
+# Planning Preset
+# ----------------------------------------------------------------------------
+# Controls how the planning skill communicates during Phase 1.
+#
+#   developer — speaks in technical terms (proxy vs extender, CQRS, etc.)
+#               Moves fast. Assumes you know the concepts.
+#
+#   guided   — explains each concept and its implications before asking
+#              for your input. Same output format, different conversation.
+#
+preset: developer
+
+# ----------------------------------------------------------------------------
+# Decision IDs
+# ----------------------------------------------------------------------------
+# How decision records are numbered and identified.
+#
+# prefix: Prepended to all decision IDs. Use your project abbreviation.
+#         Example: prefix "PEBBLE" → decisions are PEBBLE-001, PEBBLE-002, etc.
+#         Leave blank for plain numeric IDs → 001, 002, etc.
+#
+# Agents use this to generate IDs when creating new decision records.
+#
+decision_id:
+  prefix: ""
+
+# ----------------------------------------------------------------------------
+# Inline Annotations
+# ----------------------------------------------------------------------------
+# Controls how @cairn annotations appear in source code.
+#
+# prefix: The marker agents use in code comments. You probably don't need
+#         to change this unless it conflicts with something in your codebase.
+#
+# link_to_decisions: When true, annotations include a path to the full
+#         decision record. When false, just the ID and short reason.
+#         true is more verbose but ensures agents can always find context.
+#
+annotations:
+  prefix: "@cairn"
+  link_to_decisions: true
+
+# ----------------------------------------------------------------------------
+# Module-Level Decision Files
+# ----------------------------------------------------------------------------
+# Controls the co-located DECISIONS.md files that live alongside code.
+#
+# auto_create: When true, the implementation skill creates a DECISIONS.md
+#         in any module directory it enters that doesn't already have one.
+#         When false, you create them manually or during discovery.
+#
+# filename: The name of co-located decision files. DECISIONS.md is the
+#         default. You might change this if it conflicts with existing
+#         conventions in your project.
+#
+module_decisions:
+  auto_create: true
+  filename: DECISIONS.md
+
+# ----------------------------------------------------------------------------
+# Coverage Tracking
+# ----------------------------------------------------------------------------
+# Tracks which modules have been through the discovery process.
+# Useful for brownfield projects to see AKM progress over time.
+#
+# enabled: Set to false if you don't need coverage tracking
+#         (e.g., a small greenfield project where everything is planned upfront).
+#
+coverage:
+  enabled: true
+
+# ----------------------------------------------------------------------------
+# Catalog
+# ----------------------------------------------------------------------------
+# The decision reference catalog is the knowledge base the planning skill
+# draws from when surfacing decisions. All catalog files are active by
+# default. If a catalog section isn't relevant to your project, you can
+# exclude it here so the planning skill doesn't waste context on it.
+#
+# Example: A pure frontend project might exclude "data" and "integration".
+#
+# Available catalog files:
+#   structure-composition, data-state, communication-interfaces,
+#   errors-resilience, identity-conventions, resources-performance, security
+#
+catalog:
+  exclude: []               # e.g., ["data", "integration"]
