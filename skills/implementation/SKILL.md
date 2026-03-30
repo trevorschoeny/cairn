@@ -201,17 +201,20 @@ significant. For those: **stop and ask before implementing.**
 **When you hit a significant choice:**
 
 1. **Stop.** Do not pick an approach and keep going.
-2. **Present the fork.** Tell the developer:
+2. **Present everything in one prompt.** Tell the developer:
    - What choice you've encountered
    - What the options are (at least 2)
    - What tradeoffs you see
    - Which option you'd lean toward and why
-3. **Wait for their input.** Do not proceed until they respond.
-4. **After they choose:** implement their choice and annotate it with
-   `@cairn-implementation-inferred` so the decision is visible in code.
-5. **Offer to formalize:** Ask "Should we record this as a full decision?"
-   If yes, hand off to the planning skill after implementation is done.
-   If no, the `@cairn-implementation-inferred` annotation is sufficient.
+   - "Should we record this as an official decision?"
+3. **Wait.** Do not proceed until they respond.
+4. **After they respond:** implement their choice. If they want an official
+   decision, hand off to the planning skill after implementation is done.
+   If not, annotate with `@cairn-implementation-inferred`.
+
+The developer should only need to respond once — "option B, and yes make
+it official" or "go with A, no need for a record" — and you have everything
+you need to proceed.
 
 **For trivial choices** (no real tradeoffs, one obviously correct approach):
 just implement, annotate with `@cairn-implementation-inferred` if it's
