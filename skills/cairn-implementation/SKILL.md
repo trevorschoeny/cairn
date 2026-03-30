@@ -9,6 +9,7 @@ description: >
   the CLAUDE.md mentions Cairn, or when you encounter @cairn annotations in source
   files. This is NOT a workflow you invoke — it's a set of behaviors you follow
   automatically during every coding task.
+user-invocable: true
 ---
 
 # Cairn Implementation Skill

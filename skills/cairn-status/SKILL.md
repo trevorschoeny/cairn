@@ -5,6 +5,7 @@ description: >
   Faster than cairn-check (no compliance audit). Use when the developer says
   "cairn status", "cairn-status", "how many decisions do we have", or wants a
   quick inventory of the project's architectural decisions.
+user-invocable: true
 ---
 
 Give a quick Cairn status overview for this project. This is a lightweight

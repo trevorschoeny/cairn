@@ -6,6 +6,7 @@ description: >
   Cairn instructions to CLAUDE.md. Use when the developer says "cairn init",
   "set up cairn", "initialize cairn", "add cairn to this project", or any
   phrasing that implies wanting to set up Cairn in a project for the first time.
+user-invocable: true
 disable-model-invocation: true
 ---
 

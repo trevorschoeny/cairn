@@ -5,6 +5,7 @@ description: >
   decision compliance, annotation coverage, staleness, and gaps. Use when the
   developer says "cairn check", "cairn-check", "audit the architecture",
   "are we following our decisions", or wants a full compliance report.
+user-invocable: true
 ---
 
 Run a Cairn architectural health check on this project.

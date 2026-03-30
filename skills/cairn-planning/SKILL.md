@@ -10,6 +10,7 @@ description: >
   "let's add decisions" or "we need to document the architecture." This skill runs
   a structured three-phase workflow: calibration, spec collaboration, and design
   decisions. It produces decision records in .cairn/decisions/.
+user-invocable: true
 ---
 
 # Cairn Planning Skill

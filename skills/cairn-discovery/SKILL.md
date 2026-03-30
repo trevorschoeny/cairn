@@ -9,6 +9,7 @@ description: >
   already exists. Also trigger when cairn-planning detects a brownfield project
   and redirects here. This is archaeological — it reads the code and asks the
   developer to confirm what's intentional vs accidental.
+user-invocable: true
 ---
 
 # Cairn Discovery Skill
