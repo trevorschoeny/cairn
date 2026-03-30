@@ -1,15 +1,6 @@
 ---
-name: cairn-planning
-description: >
-  Guide a collaborative planning session for a new project or feature using Cairn's
-  Architectural Knowledge Management system. Use this skill when the developer says
-  "cairn plan", "cairn-plan", "let's plan this project", "help me design this",
-  "let's make architectural decisions", "set up cairn", or any phrasing that implies
-  wanting to plan a software project's structure and design decisions before coding.
-  Also trigger when someone opens a project that has a .cairn/ directory and says
-  "let's add decisions" or "we need to document the architecture." This skill runs
-  a structured three-phase workflow: calibration, spec collaboration, and design
-  decisions. It produces decision records in .cairn/decisions/.
+name: plan
+description: Guide a collaborative planning session for a new project or feature using Cairn. Use when the developer says "cairn plan", "let's plan this project", "help me design this", or "let's make architectural decisions".
 user-invocable: true
 ---
 

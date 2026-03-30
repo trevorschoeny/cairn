@@ -1,14 +1,6 @@
 ---
-name: cairn-discovery
-description: >
-  Run architectural discovery on an existing codebase to surface and record the
-  design decisions already embedded in the code. Use when the developer says
-  "cairn discover", "cairn-discover", "document the architecture", "what decisions
-  are in this codebase", "add cairn to an existing project", or any phrasing that
-  implies wanting to understand and record the architectural choices in code that
-  already exists. Also trigger when cairn-planning detects a brownfield project
-  and redirects here. This is archaeological — it reads the code and asks the
-  developer to confirm what's intentional vs accidental.
+name: discover
+description: Run architectural discovery on an existing codebase to surface and record embedded design decisions. Use when the developer says "cairn discover", "document the architecture", or "what decisions are in this codebase".
 user-invocable: true
 ---
 

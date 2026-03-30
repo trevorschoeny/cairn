@@ -1,10 +1,6 @@
 ---
-name: cairn-status
-description: >
-  Quick overview of Cairn status — decision inventory, coverage, and pending items.
-  Faster than cairn-check (no compliance audit). Use when the developer says
-  "cairn status", "cairn-status", "how many decisions do we have", or wants a
-  quick inventory of the project's architectural decisions.
+name: status
+description: Quick overview of Cairn status — decision inventory, coverage, and pending items. Faster than cairn-check. Use when the developer says "cairn status" or "how many decisions do we have".
 user-invocable: true
 ---
 

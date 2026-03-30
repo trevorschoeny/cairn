@@ -1,14 +1,6 @@
 ---
-name: cairn-implementation
-description: >
-  Behavioral overlay for coding sessions in projects that use Cairn. This skill
-  is active whenever you're writing or modifying code in a repo with a .cairn/
-  directory. It ensures architectural decisions are respected during implementation
-  by running preflight checks before coding, adding annotations after, and flagging
-  violations. Trigger whenever you see a .cairn/ directory in the project, or when
-  the CLAUDE.md mentions Cairn, or when you encounter @cairn annotations in source
-  files. This is NOT a workflow you invoke — it's a set of behaviors you follow
-  automatically during every coding task.
+name: implementation
+description: Behavioral overlay for coding sessions in Cairn-enabled projects. Ensures architectural decisions are respected by running preflight checks, adding annotations, and flagging violations. Active whenever a .cairn/ directory exists.
 user-invocable: true
 ---
 

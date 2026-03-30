@@ -1,11 +1,6 @@
 ---
-name: cairn-init
-description: >
-  Initialize Cairn in the current project. Creates the .cairn/ directory with
-  config, catalogs, decision template, and annotation reference. Also appends
-  Cairn instructions to CLAUDE.md. Use when the developer says "cairn init",
-  "set up cairn", "initialize cairn", "add cairn to this project", or any
-  phrasing that implies wanting to set up Cairn in a project for the first time.
+name: init
+description: Initialize Cairn in the current project. Creates .cairn/ directory with config, catalogs, decision template, and annotation reference. Use when the developer says "cairn init", "set up cairn", "initialize cairn", or "add cairn to this project".
 user-invocable: true
 disable-model-invocation: true
 ---

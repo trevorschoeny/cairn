@@ -1,10 +1,6 @@
 ---
-name: cairn-check
-description: >
-  Run a Cairn health check across the project or a specific module. Reports
-  decision compliance, annotation coverage, staleness, and gaps. Use when the
-  developer says "cairn check", "cairn-check", "audit the architecture",
-  "are we following our decisions", or wants a full compliance report.
+name: check
+description: Run a Cairn health check across the project or a specific module. Reports decision compliance, annotation coverage, staleness, and gaps. Use when the developer says "cairn check", "audit the architecture", or "are we following our decisions".
 user-invocable: true
 ---
 
