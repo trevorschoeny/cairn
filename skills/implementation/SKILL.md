@@ -39,8 +39,9 @@ Normal coding workflow:
 
 With Cairn:
   [understand task] → [PREFLIGHT] → [plan approach] → [write code] → [test] → [ANNOTATE] → [commit]
-                                                                                    ↓
-                                                                              [REVIEW] (optional, on demand)
+                                          ↑                              ↓
+                                    [ASK-BEFORE]                   [REVIEW] (optional)
+                                 (if decision gap found)
 ```
 
 ### Checkpoint 1: PREFLIGHT (Before Coding)
@@ -184,22 +185,38 @@ If your implementation would violate an anti-pattern, you have two options:
 
 You do NOT have the option of silently violating an anti-pattern.
 
-### Rule 3: Flag Unplanned Decisions
+### Rule 3: Ask Before Making Unplanned Decisions
 
-During implementation, you will inevitably make choices that aren't covered
-by existing decision records. Most are trivial (variable names, loop style).
-Some are architecturally significant.
+During implementation, you will encounter choices not covered by existing
+decision records. Most are trivial (variable names, loop style) — just
+pick the reasonable option and move on. But some are architecturally
+significant. For those: **stop and ask before implementing.**
 
-If you make a choice that another developer (or agent) encountering this
-code later would need to understand the reasoning behind, flag it:
-- Add `@cairn-implementation-inferred` annotation with your reasoning.
-- Mention it to the developer: "I made an architectural choice here that
-  isn't covered by existing decisions: [describe]. Should we record this
-  as a decision?"
+**Significance threshold:** A choice is significant if:
+- It affects how other files should be written
+- Changing it later would require touching multiple files
+- It introduces a new pattern, dependency, or abstraction
+- There are two or more reasonable approaches with real tradeoffs
 
-Threshold: if the choice affects how other files should be written, or
-if changing it later would require touching multiple files, it's significant
-enough to flag.
+**When you hit a significant choice:**
+
+1. **Stop.** Do not pick an approach and keep going.
+2. **Present the fork.** Tell the developer:
+   - What choice you've encountered
+   - What the options are (at least 2)
+   - What tradeoffs you see
+   - Which option you'd lean toward and why
+3. **Wait for their input.** Do not proceed until they respond.
+4. **After they choose:** implement their choice and annotate it with
+   `@cairn-implementation-inferred` so the decision is visible in code.
+5. **Offer to formalize:** Ask "Should we record this as a full decision?"
+   If yes, hand off to the planning skill after implementation is done.
+   If no, the `@cairn-implementation-inferred` annotation is sufficient.
+
+**For trivial choices** (no real tradeoffs, one obviously correct approach):
+just implement, annotate with `@cairn-implementation-inferred` if it's
+non-obvious, and move on. Don't interrupt the developer's flow for things
+that don't matter.
 
 ### Rule 4: Use the Right Sub-Agent for the Job
 
@@ -217,18 +234,19 @@ instructions, output formats, and tool restrictions that ensure consistency.
 If the sub-agents aren't available (wrong environment), use the fallback
 paths described in each checkpoint above. But if they ARE available, use them.
 
-### Rule 5: Don't Create Decisions During Implementation
+### Rule 5: Don't Create Full Decisions During Implementation
 
-If you discover that a decision is needed but doesn't exist, do NOT create
-one on the fly. Instead:
-1. Flag it with `@cairn-implementation-inferred`.
-2. Tell the developer a decision gap exists.
-3. Continue with the most reasonable approach and document your reasoning.
+When Rule 3 surfaces a significant choice and the developer decides, do NOT
+write a full decision record on the fly. Instead:
+1. Implement the developer's choice.
+2. Annotate with `@cairn-implementation-inferred`.
+3. After the implementation task is complete, offer to formalize it via
+   the planning skill if the developer wants a full record.
 
-Decision creation is the planning skill's job. It involves presenting options,
-discussing tradeoffs, and getting explicit human input. Doing it in the middle
-of an implementation task produces low-quality decisions that skip the tradeoff
-analysis.
+Full decision records involve presenting options, discussing tradeoffs,
+and recording anti-patterns properly. Doing that mid-implementation
+breaks flow and produces thin records. The `@cairn-implementation-inferred`
+annotation captures the choice now; the planning skill can flesh it out later.
 
 ---
 
@@ -265,7 +283,9 @@ grep for anti-patterns in decision files scoped to your target files.
 
 ```
 BEFORE coding:  Run cairn-preflight (or read decisions directly)
-DURING coding:  Respect anti-patterns. Flag unplanned choices. Don't touch @cairn-unknown.
+DURING coding:  Respect anti-patterns. Don't touch @cairn-unknown.
+                Significant uncovered choice? STOP → present options → wait for developer.
+                Trivial uncovered choice? Just do it, annotate if non-obvious.
 AFTER coding:   Run cairn-annotator (or annotate manually)
 ON DEMAND:      Run cairn-reviewer for compliance check
 
