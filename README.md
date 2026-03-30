@@ -27,13 +27,15 @@ Cairn provides:
 
 ## Install
 
-Cairn is a Claude Code plugin. Install it from GitHub:
+Cairn is a Claude Code plugin. Add the marketplace and install:
 
 ```
-/plugin install github:trevorschoeny/cairn
+/plugin marketplace add github:trevorschoeny/cairn
+/plugin install cairn@cairn
 ```
 
-Then initialize it in any project:
+On first session in a project, Cairn will detect that `.cairn/` doesn't exist
+and offer to run `/cairn:init` automatically. You can also initialize manually:
 
 ```
 /cairn:init

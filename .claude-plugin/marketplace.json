@@ -1,0 +1,23 @@
+{
+  "name": "cairn",
+  "owner": {
+    "name": "Trevor Schoeny"
+  },
+  "metadata": {
+    "description": "Architectural Knowledge Management for AI-Assisted Development"
+  },
+  "plugins": [
+    {
+      "name": "cairn",
+      "source": "..",
+      "description": "Records the WHY behind your code so agents don't 'improve' away deliberate decisions.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Trevor Schoeny"
+      },
+      "repository": "https://github.com/trevorschoeny/cairn",
+      "license": "MIT",
+      "keywords": ["architecture", "decisions", "knowledge-management", "brownfield", "adr"]
+    }
+  ]
+}
