@@ -2,6 +2,12 @@
 name: status
 description: Quick overview of Cairn status — decision inventory, coverage, and pending items. Faster than cairn-check. Use when the developer says "cairn status" or "how many decisions do we have".
 user-invocable: true
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
+  - Bash(*)
 ---
 
 Give a quick Cairn status overview for this project. This is a lightweight

@@ -2,6 +2,12 @@
 name: discover
 description: Run architectural discovery on an existing codebase to surface and record embedded design decisions. Use when the developer says "cairn discover", "document the architecture", or "what decisions are in this codebase".
 user-invocable: true
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
+  - Bash(*)
 ---
 
 # Cairn Discovery Skill

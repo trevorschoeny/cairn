@@ -2,6 +2,12 @@
 name: implementation
 description: Behavioral overlay for coding sessions in Cairn-enabled projects. Ensures architectural decisions are respected by running preflight checks, adding annotations, and flagging violations. Active whenever a .cairn/ directory exists.
 user-invocable: true
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
+  - Bash(*)
 ---
 
 # Cairn Implementation Skill

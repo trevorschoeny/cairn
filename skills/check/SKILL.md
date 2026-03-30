@@ -2,6 +2,12 @@
 name: check
 description: Run a Cairn health check across the project or a specific module. Reports decision compliance, annotation coverage, staleness, and gaps. Use when the developer says "cairn check", "audit the architecture", or "are we following our decisions".
 user-invocable: true
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
+  - Bash(*)
 ---
 
 Run a Cairn architectural health check on this project.

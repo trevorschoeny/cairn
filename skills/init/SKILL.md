@@ -2,6 +2,12 @@
 name: init
 description: Initialize Cairn in the current project. Creates .cairn/ directory with config, catalogs, decision template, and annotation reference. Use when the developer says "cairn init", "set up cairn", "initialize cairn", or "add cairn to this project".
 user-invocable: true
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
+  - Bash(*)
 disable-model-invocation: true
 ---
 

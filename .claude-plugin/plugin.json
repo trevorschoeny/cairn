@@ -1,6 +1,6 @@
 {
   "name": "cairn",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Architectural Knowledge Management for AI-Assisted Development — records the WHY behind your code so agents don't 'improve' away deliberate decisions.",
   "author": { "name": "Trevor Schoeny" },
   "repository": "https://github.com/trevorschoeny/cairn",

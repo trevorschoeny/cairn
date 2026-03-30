@@ -2,6 +2,12 @@
 name: plan
 description: Guide a collaborative planning session for a new project or feature using Cairn. Use when the developer says "cairn plan", "let's plan this project", "help me design this", or "let's make architectural decisions".
 user-invocable: true
+allowed-tools:
+  - Read
+  - Write
+  - Glob
+  - Grep
+  - Bash(*)
 ---
 
 # Cairn Planning Skill
