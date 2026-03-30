@@ -8,7 +8,6 @@ allowed-tools:
   - Glob
   - Grep
   - Bash(*)
-disable-model-invocation: true
 ---
 
 # Cairn Init
